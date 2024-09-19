@@ -17,6 +17,8 @@ function App() {
 
     const handleClick = () => {
         const ans = testFile.find(item => data.toLowerCase() === item.word.toLowerCase());
+        console.log("Searched word:", data);
+        console.log("Result:", ans ? ans.meaning : "Word not found in the dictionary.");
         setResult(ans ? ans.meaning : "Word not found in the dictionary.");
     };
 
@@ -30,9 +32,12 @@ function App() {
                 value={data}
             />
             <button type="button" onClick={handleClick}>Search</button>
-            <p><b>Definition:</b></p> 
+            <div>
+            <b>Definition:</b>
             <p>{result}</p>
         </div>
+        </div>
+
     );
 }
 
