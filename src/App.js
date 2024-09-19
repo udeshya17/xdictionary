@@ -17,8 +17,11 @@ function App() {
 
     const handleClick = (e) => {
         e.preventDefault();
+
         const cleanedInput = data.trim().toLowerCase();
+
         const ans = testFile.find(item => cleanedInput === item.word.toLowerCase());
+
         setResult(ans ? ans.meaning : "Word not found in the dictionary.");
     }
 
@@ -34,11 +37,10 @@ function App() {
                 />
                 <button>Search</button>
             </form>
+
             
-            <div className="definition-container">
-                <span><b>Definition:</b></span>
-                <p>{result}</p>
-            </div>
+            <span><b>Definition:</b></span> 
+            <span>{result}</span>  
         </div>
     );
 }
