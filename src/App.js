@@ -13,33 +13,25 @@ function App() {
 
     const handleChange = (e) => {
         setData(e.target.value);
-    }
+    };
 
-    const handleClick = (e) => {
-        e.preventDefault();
-
+    const handleClick = () => {
         const ans = testFile.find(item => data.toLowerCase() === item.word.toLowerCase());
-
         setResult(ans ? ans.meaning : "Word not found in the dictionary.");
-    }
-
-    // console.log(result);
+    };
 
     return (
         <div>
             <h1>Dictionary App</h1>
-            <form onSubmit={handleClick}>
-                <input 
-                    type='text' 
-                    placeholder='Search for a word...'
-                    onChange={handleChange}
-                    value={data}
-                />
-                <button type="submit">Search</button>
-            </form>
+            <input 
+                type='text' 
+                placeholder='Search for a word...'
+                onChange={handleChange}
+                value={data}
+            />
+            <button type="button" onClick={handleClick}>Search</button>
             <p><b>Definition:</b></p> 
             <p>{result}</p>
-            
         </div>
     );
 }
