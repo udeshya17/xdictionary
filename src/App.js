@@ -18,12 +18,12 @@ function App() {
     const handleClick = (e) => {
         e.preventDefault();
 
-        const cleanedInput = data.trim().toLowerCase();
-
-        const ans = testFile.find(item => cleanedInput === item.word.toLowerCase());
+        const ans = testFile.find(item => data.toLowerCase() === item.word.toLowerCase());
 
         setResult(ans ? ans.meaning : "Word not found in the dictionary.");
     }
+
+    // console.log(result);
 
     return (
         <div>
@@ -38,7 +38,7 @@ function App() {
                 <button type="submit">Search</button>
             </form>
             <p><b>Definition:</b></p> 
-            {result} 
+            <p>{result}</p>
             
         </div>
     );
