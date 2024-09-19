@@ -8,7 +8,6 @@ const testFile = [
 ];
 
 function App() {
-
     const [data, setData] = useState('');
     const [result, setResult] = useState('');
 
@@ -18,6 +17,11 @@ function App() {
 
     const handleClick = (e) => {
         e.preventDefault();
+
+        if (!data.trim()) {
+            setResult("Word not found in the dictionary.");
+            return;
+        }
 
         const ans = testFile.find(item => data.toLowerCase() === item.word.toLowerCase());
 
@@ -34,8 +38,7 @@ function App() {
                     onChange={handleChange}
                     value={data}
                 />
-                <button type="submit" disabled={!data.trim()}>Search</button>
-          
+                <button type="submit">Search</button> 
             </form>
             
             {result && (
