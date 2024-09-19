@@ -35,12 +35,13 @@ function App() {
                     onChange={handleChange}
                     value={data}
                 />
-                <button>Search</button>
+                <button type="submit">Search</button>
             </form>
 
-            
-            <span><b>Definition:</b></span> 
-            <span>{result}</span>  
+            <div>
+                <span><b>Definition:</b></span> 
+                <span>{result}</span>  
+            </div>
         </div>
     );
 }
