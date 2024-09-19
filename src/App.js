@@ -37,11 +37,9 @@ function App() {
                 />
                 <button type="submit">Search</button>
             </form>
-
-            <div>
-                <span><b>Definition:</b></span> 
-                <span>{result}</span>  
-            </div>
+            <span><b>Definition:</b></span> 
+            <p>{result}</p>  
+            
         </div>
     );
 }
